@@ -14,13 +14,23 @@ import RegisterationModal from "../../Modals/RegisterationModal/RegisterationMod
 
 const LoginPage = () => {
   const [registerModal, setRegisterModal] = useState(false);
-
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+  });
   const handleClose = () => {
     setRegisterModal(false);
   };
 
   const handleOnClick = () => {
     setRegisterModal(true);
+  };
+
+  const handleChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = () => {
+    console.log(state);
   };
   return (
     <Box>
@@ -65,11 +75,17 @@ const LoginPage = () => {
                     type="text"
                     placeholder="Email address or phone number"
                     size="medium"
+                    value={state.email}
+                    name="email"
+                    handleChange={(e) => handleChange(e)}
                   />
                   <CustomField
-                    type="text"
+                    type="password"
                     placeholder="Password"
                     size="medium"
+                    value={state.password}
+                    name="password"
+                    handleChange={(e) => handleChange(e)}
                   />
 
                   <CustomButton
@@ -77,6 +93,8 @@ const LoginPage = () => {
                     size="large"
                     buttonData="Log In"
                     fullWidth="fullWidth"
+                    type="submit"
+                    handleOnClick={handleSubmit}
                   />
                 </Stack>
                 <Box m="15px" textAlign="center">

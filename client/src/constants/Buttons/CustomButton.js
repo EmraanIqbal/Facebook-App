@@ -8,6 +8,8 @@ const CustomButton = ({
   buttonData = "",
   fullWidth = "",
   handleOnClick = () => {},
+  padding = "",
+  type = "",
 }) => {
   // console.log(color);
   return (
@@ -21,6 +23,8 @@ const CustomButton = ({
         // fontSize="900"
         // color={color}
         // color="success"
+        type={type}
+        p={padding}
       >
         {buttonData}
       </Button>

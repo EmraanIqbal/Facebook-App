@@ -6,9 +6,15 @@ const CustomField = ({
   placeholder = "",
   size = "",
   label = "",
+  value = "",
+  handleChange = () => {},
+  name = "",
 }) => {
   return (
     <TextField
+      onChange={handleChange}
+      name={name}
+      value={value}
       type={type}
       placeholder={placeholder}
       fullWidth
