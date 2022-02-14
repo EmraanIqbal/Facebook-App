@@ -1,7 +1,3 @@
-import React from "react";
+import MainApp from "./config/index";
 
-const Server = () => {
-  return <div>Server File is running now</div>;
-};
-
-export default Server;
+MainApp();
